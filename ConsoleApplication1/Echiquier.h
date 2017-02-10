@@ -19,8 +19,6 @@
 
 class Echiquier{
 
-
-
 public:
 	// Constructeur par defaut
 	Echiquier();
@@ -29,7 +27,7 @@ public:
 	~Echiquier();
 
 	// Methodes publiques
-	void ajouterRoi(const Roi &unRoi, int position);
+	void ajouterRoi(const Roi &unRoi,const int position);
 	void ajouterTour(const Tour& uneTour);
 	void ajouterPion(const Pion& unPion);
 

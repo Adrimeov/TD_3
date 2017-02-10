@@ -30,6 +30,12 @@
     <ClCompile Include="Tour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Roi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echiquier.h">
@@ -39,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Roi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
