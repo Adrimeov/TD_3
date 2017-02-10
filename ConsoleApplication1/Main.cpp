@@ -1,9 +1,10 @@
+/**********************************************
+* Titre: Travail pratique #1 - Main.cpp
+* Date: 22 fevrier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+*Description: Declaration de la classe Echiquier
+*********************************************/
 
-/**************************************************
-* Titre: Travail pratique #3 - Main.cpp
-* Date:
-* Auteur:
-**************************************************/
 
 
 int main()

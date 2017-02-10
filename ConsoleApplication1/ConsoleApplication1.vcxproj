@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Echiquier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echiquier.h" />

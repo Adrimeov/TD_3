@@ -1,9 +1,10 @@
+/**********************************************
+* Titre: Travail pratique #1 - Medecin.h
+* Date: 22 fevrier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+*Description: Declaration de la classe Echiquier
+*********************************************/
 
-/********************************************
-* Titre: Travail pratique #3 - Echiquier.h
-* Date:
-* Auteur:
-*******************************************/
 
 #pragma once
 #ifndef ECHIQUIER_H
