@@ -10,7 +10,6 @@
 #ifndef PIECE_H
 #define PIECE_H
 
-
 #include <iostream>
 #include <string>
 
@@ -39,7 +38,7 @@ public :
 	int obtenirPositionY() const;
 	void modifierPositionY(int y);
 
-	bool estMouvementValide(int toX, int toY); 
+	bool estMouvementValide(int toX, int toY) const; 
 
 
 private:
