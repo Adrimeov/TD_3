@@ -6,6 +6,9 @@
 
 #include "Piece.h"
 
+const int SEPT = 7; //taille de case en x ou y
+const int ZERO = 0; //minimum
+
 using namespace std;
 
 /*********************************************
@@ -38,7 +41,7 @@ Piece::Piece(string id, string couleur, int positionX, int positionY)
 
 /*********************************************
 *Fonctions:     ~Piece()
-*Descriptions:  Destructeur de l'objet
+*Descriptions:  Destructeur de l'objet Piece
 *Parametre:     aucun
 *Retour:        aucun
 *********************************************/
@@ -129,14 +132,13 @@ void Piece::modifierPositionY(int positionY) {
 /*********************************************
 *Fonctions:     estMouvementValide()
 *Descriptions:  Indique si un mouvement est possible
-                puisque l'objet piece est une base des
-                autres types de piece, cette fonction 
-                nous est inutile ici
 *Parametre:     -(int)toX : le prochain x
                 -(int)toY : le prochain y
 *Retour:        -(bool) : booleen vrai ou faus si le mouvement est valide
 *********************************************/
 bool Piece::estMouvementValide(int toX, int toY) const {
-    return true;
+    bool estValideX = (toX <= SEPT && toX >= ZERO);
+    bool estValideY = (toY <= SEPT && toY >= ZERO);
+    return estValideX && estValideY;
 }
 
