@@ -2,7 +2,7 @@
 * Titre: Travail pratique #1 - Medecin.h+++++++++++++++++++++++++++
 * Date: 10 janvier 2017
 * Auteur: FERRON Samuel, FONTAINE Jean-Frederic
-*Description: Définition de la classe Medecin
+*Description: Dï¿½finition de la classe Medecin
 *********************************************/
 
 
@@ -13,4 +13,11 @@
 *				vers un tableau d'infirmier
 *Parametre:		Aucun
 *Retour:		Aucun
+*********************************************/
+
+/*********************************************
+*Fonctions:		
+*Descriptions:	
+*Parametre:		
+*Retour:		
 *********************************************/
