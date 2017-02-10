@@ -5,7 +5,9 @@
 *Description: Définition de la classe Tour
 *********************************************/
 #pragma once
-#include<Piece.h>
+#ifndef TOUR_H
+#define TOUR_H
+#include "Piece.h"
 #include<string>
 using namespace std; 
 class Tour : public Piece{
@@ -17,9 +19,8 @@ public:
 	Tour(string id, string couleur, int positionX, int positionY);
 	//Destructeur 
 	~Tour(); 
-
 	//Fonction verifiant la validite d'un mouvement 
-	bool estMouvementValide(int toX, int toY);
+	bool estMouvementValide(int toX, int toY) const;
 	//Fontion pour effectuer un deplacement 
 	void deplacer(int toX, int toY);
 
@@ -29,4 +30,6 @@ private:
 
 
 
-}
+};
+
+#endif

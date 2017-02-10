@@ -147,8 +147,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Echiquier.cpp" />
+    <ClCompile Include="Tour.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echiquier.h" />
