@@ -1,8 +1,7 @@
-
 /********************************************
-* Titre: Travail pratique #3 - Piece.h
-* Date:
-* Auteur:
+* Titre:	Travail pratique #3 - Piece.h
+* Date:		10 fevrier 2017
+* Auteur:	FERRON Samuel, FONTAINE Jean-Frederic
 *******************************************/
 
 #pragma once
@@ -26,6 +25,7 @@ public :
 	// destructeur
 	~Piece();
 
+	//Accesseur et modificateurs respectif
 	string obtenirId() const;
 	void modifierId(string id);
 
@@ -38,11 +38,12 @@ public :
 	int obtenirPositionY() const;
 	void modifierPositionY(int y);
 
+	//Verification des mouvements
 	bool estMouvementValide(int toX, int toY) const; 
 
 
 private:
-
+	//Attributs
 	string id_;
 	string couleur_;
 	int positionX_;
