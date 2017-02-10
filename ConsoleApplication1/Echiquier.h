@@ -1,8 +1,8 @@
 
 /********************************************
-* Titre: Travail pratique #3 - Echiquier.h
-* Date:
-* Auteur:
+* Titre:	Travail pratique #3 - Echiquier.h
+* Date:		10 fevrier 2017
+* Auteur:	FERRON Samuel, FONTAINE Jean-Frederic
 *******************************************/
 
 #pragma once
