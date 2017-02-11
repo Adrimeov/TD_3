@@ -20,12 +20,10 @@
 class Echiquier{
 
 public:
-	// Constructeur par defaut
+	//Constructeur par defaut
 	Echiquier();
-
-	// Destructeur
+	//Destructeur
 	~Echiquier();
-
 	// Methodes publiques
 	void ajouterRoi(const Roi &unRoi,const int position);
 	void ajouterTour(const Tour& uneTour);
@@ -34,9 +32,10 @@ public:
 	void enleverTour(const string id);
 	void enleverPion(const string id);
 
-	void deplacerPiece(string id, int toX, int toY);
+	void deplacerPiece(const string id, int toX, int toY);
 
 private :
+	//Attribut privie 
 	Pion*   tableauPions_;
 	Tour*   tableauTours_;
 	Roi     rois_[2];	
