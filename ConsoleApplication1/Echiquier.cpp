@@ -19,8 +19,8 @@ Echiquier::Echiquier() {
 	Tour* tableauTours_ = new Tour[QUATRE];
 	compteurPion_ = ZERO; 
 	compteurTour_ = ZERO;
-	capaciteTableauPion_ = ZERO; 
-	capaciteTableauTour_ = ZERO; 
+	capaciteTableauPion_ = SEIZE; 
+	capaciteTableauTour_ = QUATRE; 
 }
 /*********************************************
 *Fonctions:		Medecin::~Medecin()
@@ -77,10 +77,40 @@ void Echiquier::ajouterTour(const Tour& uneTour) {
 }
 
 
-
+/*********************************************
+*Fonctions:		Echiquier::deplacerPiece()
+*Descriptions:	Fonction qui permet de modifier les coordonne d'une 
+*				piece, c'est-a-dire effectuer un deplacement. 
+*Parametre:		-(const string)id	: Id de la piece a deplacer
+*				-(int)toX			: Nouvel coordone en X
+*				-(int)toY			: Nouvel coordonne en Y
+*Retour:		Aucun
+*********************************************/
 void Echiquier::deplacerPiece(const string id, int toX, int toY) {
-	
-
+	bool trouveEtModifier = false; 
+	//Parcour tableau pion
+	for (int i = 0; i < compteurPion_; i++) {
+		if (tableauPions_[i].obtenirId() == id) {
+			tableauPions_[i].deplacer(toX, toY);
+			trouveEtModifier = true; 
+			}
+		}
+	//Parcour tableau tour
+	for (int i = 0; i < compteurTour_ && trouveEtModifier == false; i++) {
+		if (tableauTours_[i].obtenirId() == id) {
+			tableauTours_[i].deplacer(toX, toY);
+			trouveEtModifier = true; 
+		}
+	}
+	//Parcour tableau roi
+	for (int i = 0; i < DEUX && trouveEtModifier == false; i++) {
+		if (rois_[i].obtenirId() == id) {
+			rois_[i].deplacer(toX, toY);
+			trouveEtModifier = true; 
+		}
+	}
+	if (trouveEtModifier == false)
+		cout << "Deplacement non effectue, piece(id) non existante" << endl; 
 
 }
 
