@@ -7,6 +7,7 @@
 #include "Echiquier.h"
 #include "constantes.h"
 #include <string>
+#include <cmath>
 using namespace std; 
 /*********************************************
 *Fonctions:		Echiquier() 
@@ -112,23 +113,7 @@ void Echiquier::deplacerPiece(const string id, int toX, int toY) {
 	if (trouveEtModifier == false)
 		cout << "Deplacement non effectue, piece(id) non existante" << endl; 
 
-}
-
-////La m�thode publique void deplacerPiece(string id, int toX, int toY) qui d�place la pi�ce 
-////d'identifiant id  � la position de coordonn�es (toX,toY). ? 
-////
-////
-////
-////
-////La m�thode publiquevoid enleverTour(const string id) qui permet d�enlever la tour d'identifiant 
-////id de tableauTours_  ? 
-////
-////
-////
-////
-////
-////La m�thode publique void enleverPion(const string id)
-////qui permet d�enlever le pion d'identifiant id de tableauPions_ 
+} 
 
 /*********************************************
 *Fonctions:		Echiquier::EnleverTour

@@ -11,7 +11,10 @@ const int SEPT = 7; //taille de case en x ou y
 const int ZERO = 0; //minimum
 
 using namespace std;
-
+const int SEPT = 7; //taille de case en x ou y
+const int ZERO = 0; //minimum
+const int DEUX = 2;
+const int UN = 1;
 /*********************************************
 *Fonctions:     Piece()
 *Descriptions:  Constructeur par default de
@@ -22,7 +25,7 @@ using namespace std;
 Piece::Piece() {
     positionX_ = 0;
     positionY_ = 0;
-    id_ = "piece";
+    id_ = "A0";
     couleur_ = "blanc";
 }
 /*********************************************
