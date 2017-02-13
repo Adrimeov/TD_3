@@ -60,12 +60,10 @@ Roi::~Roi()
 *********************************************/
 bool Roi::estMouvementValide(int toX, int toY) const {
     bool estValide = false;
-    bool estValideX = (toX <= SEPT && toX >= ZERO);
-    bool estValideY = (toY <= SEPT && toY >= ZERO);
 
-    if (estValideX && estValideY) {
-        estValideX = (abs(toX - obtenirPositionX()) == 1);
-        estValideY = (abs(toY - obtenirPositionY()) == 1);
+    if (estMouvementValide(toX, toY)) {
+        bool estValideX = (abs(toX - obtenirPositionX()) == 1);
+        bool estValideY = (abs(toY - obtenirPositionY()) == 1);
         if(estValideX && estValideY)
             estValide = true;
     }
@@ -73,7 +71,7 @@ bool Roi::estMouvementValide(int toX, int toY) const {
 }
 
 /*********************************************
-*Fonctions:     estMouvementValide()
+*Fonctions:     deplacer()
 *Descriptions:  deplace le roi si le mouvement est valide
 *Parametre:     -(int)toX : destination en x 
                 -(int)toY : destination en y 
