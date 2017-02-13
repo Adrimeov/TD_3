@@ -93,7 +93,7 @@ int main()
 	//12-  Deplacer le piece d'id H7 � la position (7,4)  --Deplacement du Pion
 	echiquier.deplacerPiece("H7", 7, 4);
 
-	//13-  Deplacer la piece d'id A2 � la position (0,4)  --Deplacement du Pion
+	////13-  Deplacer la piece d'id A2 � la position (0,4)  --Deplacement du Pion
 	echiquier.deplacerPiece("A2", 0, 4);
 
 	//14-  Deplacer la piece d'id H8 � la position (7,6)  --Deplacement de la Tour

@@ -53,5 +53,8 @@
     <ClInclude Include="Roi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="constantes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

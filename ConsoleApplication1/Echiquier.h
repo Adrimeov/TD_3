@@ -13,11 +13,12 @@
 #include "Pion.h"
 #include "Roi.h"
 #include "Tour.h"
+#include "constantes.h"
 
 #include <string>
 
 
-class Echiquier{
+class Echiquier {
 
 public:
 	//Constructeur par defaut
@@ -25,7 +26,7 @@ public:
 	//Destructeur
 	~Echiquier();
 	// Methodes publiques
-	void ajouterRoi(const Roi &unRoi,const int position);
+	void ajouterRoi(const Roi &unRoi, const int position);
 	void ajouterTour(const Tour& uneTour);
 	void ajouterPion(const Pion& unPion);
 
@@ -34,10 +35,10 @@ public:
 
 	void deplacerPiece(const string id, int toX, int toY);
 
-private :
+private:
 	//Attribut privie 
-	Pion*   tableauPions_;
-	Tour*   tableauTours_;
+	Pion*   tableauPions_ = new Pion[SEIZE];
+	Tour*   tableauTours_ = new Tour[QUATRE];
 	Roi     rois_[2];	
 
 	unsigned int compteurPion_;

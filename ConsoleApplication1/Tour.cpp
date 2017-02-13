@@ -46,13 +46,12 @@ Tour::~Tour() {}
 bool Tour::estMouvementValide(int toX, int toY) const {
 	int PositionInitialeX = obtenirPositionX();
 	int PositionInitialeY = obtenirPositionY();
-	bool estValide;
-	if (PositionInitialeX != toX && estMouvementValide(toX, toY) && PositionInitialeY == toY)
-		return estValide = true;
-	else if (PositionInitialeY != toY && estMouvementValide(toX, toY) && PositionInitialeX == toX)
-		return estValide = true;
-	else if (PositionInitialeY != toY && PositionInitialeX != toX)
-		return estValide = false;
+	bool estValide = false;
+	if (PositionInitialeX != toX && Piece::estMouvementValide(toX, toY) && PositionInitialeY == toY)
+		estValide = true;
+	else if (PositionInitialeY != toY && Piece::estMouvementValide(toX, toY) && PositionInitialeX == toX)
+		estValide = true;
+	return estValide;
 }
 /*********************************************
 *Fonctions: Tour::Tour::deplacer()
@@ -63,10 +62,10 @@ bool Tour::estMouvementValide(int toX, int toY) const {
 *********************************************/
 void Tour::deplacer(int toX, int toY) {
 	if (estMouvementValide(toX, toY)) {
+		cout << "Deplacement de la tour de la position X =" << obtenirPositionX() << " Y =" <<
+		obtenirPositionY() << " vers la position X=" << toX << " Y=" << toY << endl;
 		modifierPositionX(toX);
 		modifierPositionY(toY);
-		cout << "Deplacement de la tour de la position X =" << obtenirPositionX() << " Y =" << 
-		obtenirPositionY() << " vers la position X=" << toX << " Y=" << toY << endl;
 		
 	}
 }

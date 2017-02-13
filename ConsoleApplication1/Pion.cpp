@@ -17,7 +17,7 @@ using namespace std;
 *Parametre:     aucun
 *Retour:        aucun
 *********************************************/
-Pion::Pion(): Piece() {
+Pion::Pion(): Piece(), estPositionInit_(true) {
     //Rien
 }
 
@@ -32,7 +32,7 @@ Pion::Pion(): Piece() {
 *Retour:        aucun
 *********************************************/
 Pion::Pion(string id, string couleur, int positionX, int positionY)
-    :Piece(id, couleur, positionX, positionY){
+    :Piece(id, couleur, positionX, positionY), estPositionInit_(true){
         //Rien
 }
 
@@ -58,7 +58,7 @@ bool Pion::estMouvementValide(int toX, int toY) const {
     bool couleur = obtenirCouleur() == "blanc";
     int diffPosition = toY - obtenirPositionY();
 
-    if (estMouvementValide(toX, toY) && toX == obtenirPositionX()) {
+    if (Piece::estMouvementValide(toX, toY) && toX == obtenirPositionX()) {
         if (estPositionInit_) {
             if (couleur) {
                 estValide = (diffPosition <= DEUX && diffPosition >= 0);
@@ -88,7 +88,11 @@ bool Pion::estMouvementValide(int toX, int toY) const {
 *********************************************/
 void Pion::deplacer(int toX, int toY) {
     if (estMouvementValide(toX, toY)) {
+		cout << "Deplacement du pion de la position X =" << obtenirPositionX() << " Y =" <<
+			obtenirPositionY() << " vers la position X=" << toX << " Y=" << toY << endl;
         modifierPositionX(toX);
         modifierPositionY(toY);
+		estPositionInit_ = false;
+		
     }
 }

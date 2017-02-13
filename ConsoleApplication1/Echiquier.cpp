@@ -16,8 +16,8 @@ using namespace std;
 *Retour:		Aucun
 *********************************************/
 Echiquier::Echiquier() {
-	Pion* tableauPions_ = new Pion[SEIZE];
-	Tour* tableauTours_ = new Tour[QUATRE];
+	tableauPions_ = new Pion[SEIZE];
+	tableauTours_ = new Tour[QUATRE];
 	compteurPion_ = ZERO; 
 	compteurTour_ = ZERO;
 	capaciteTableauPion_ = SEIZE; 
@@ -29,7 +29,10 @@ Echiquier::Echiquier() {
 *Parametre:		Aucun
 *Retour:		Aucun
 *********************************************/
-Echiquier::~Echiquier(){}
+Echiquier::~Echiquier(){
+	delete[] tableauPions_;
+	delete[] tableauTours_;
+}
 
 /*********************************************
 *Fonctions:		Medecin::~Medecin()
@@ -42,7 +45,7 @@ void Echiquier::ajouterRoi(const Roi &unRoi, const int position) {
 	if (abs(position) > 1)
 		cout << "Impossible d'ajouter le roi !" << endl;
 	else {
-		unRoi[position] = unRoi;
+		rois_[position] = unRoi;
 		cout << "Roi ajoute !" << endl;
 	}
 	}
@@ -56,7 +59,9 @@ void Echiquier::ajouterRoi(const Roi &unRoi, const int position) {
 *********************************************/
 void Echiquier::ajouterPion (const Pion& unPion){
 	if (compteurPion_ < capaciteTableauPion_) {
-		tableauPions_[compteurPion_++] = unPion;
+		tableauPions_[compteurPion_] = unPion;
+		cout << "Pion ajoute !" << endl;
+		compteurPion_++;
 	}
 	else
 		cout << "Tableau de Pion plein !" << endl; 
@@ -72,6 +77,7 @@ void Echiquier::ajouterPion (const Pion& unPion){
 void Echiquier::ajouterTour(const Tour& uneTour) {
 	if (compteurTour_ < capaciteTableauTour_) {
 		tableauTours_[compteurTour_++] = uneTour;
+		cout << "Tour ajoute !" << endl;
 	}
 	else
 		cout << "Tableau de tour plein !" << endl;
@@ -90,14 +96,14 @@ void Echiquier::ajouterTour(const Tour& uneTour) {
 void Echiquier::deplacerPiece(const string id, int toX, int toY) {
 	bool trouveEtModifier = false; 
 	//Parcour tableau pion
-	for (int i = 0; i < compteurPion_; i++) {
+	for (unsigned int i = 0; i < compteurPion_; i++) {
 		if (tableauPions_[i].obtenirId() == id) {
 			tableauPions_[i].deplacer(toX, toY);
 			trouveEtModifier = true; 
 			}
 		}
 	//Parcour tableau tour
-	for (int i = 0; i < compteurTour_ && trouveEtModifier == false; i++) {
+	for (unsigned int i = 0; i < compteurTour_ && trouveEtModifier == false; i++) {
 		if (tableauTours_[i].obtenirId() == id) {
 			tableauTours_[i].deplacer(toX, toY);
 			trouveEtModifier = true; 
@@ -110,7 +116,7 @@ void Echiquier::deplacerPiece(const string id, int toX, int toY) {
 			trouveEtModifier = true; 
 		}
 	}
-	if (trouveEtModifier == false)
+	if (!trouveEtModifier)
 		cout << "Deplacement non effectue, piece(id) non existante" << endl; 
 
 } 

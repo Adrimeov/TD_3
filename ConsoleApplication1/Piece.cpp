@@ -7,14 +7,8 @@
 #include "Piece.h"
 #include "constantes.h"
 
-const int SEPT = 7; //taille de case en x ou y
-const int ZERO = 0; //minimum
-
 using namespace std;
-const int SEPT = 7; //taille de case en x ou y
-const int ZERO = 0; //minimum
-const int DEUX = 2;
-const int UN = 1;
+
 /*********************************************
 *Fonctions:     Piece()
 *Descriptions:  Constructeur par default de
@@ -141,8 +135,15 @@ void Piece::modifierPositionY(int positionY) {
 *Retour:        -(bool) : booleen vrai ou faus si le mouvement est valide
 *********************************************/
 bool Piece::estMouvementValide(int toX, int toY) const {
+	bool estValide = false;
     bool estValideX = (toX <= SEPT && toX >= ZERO);
     bool estValideY = (toY <= SEPT && toY >= ZERO);
-    return estValideX && estValideY;
+
+	if (toX - obtenirPositionX() != 0 || toY - obtenirPositionY() != 0) {
+		if (estValideX && estValideY)
+			estValide = true;
+	}
+
+	return estValide;
 }
 

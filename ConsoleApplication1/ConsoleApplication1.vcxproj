@@ -155,6 +155,7 @@
     <ClCompile Include="Tour.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="constantes.h" />
     <ClInclude Include="Echiquier.h" />
     <ClInclude Include="Pion.h" />
     <ClInclude Include="Roi.h" />
