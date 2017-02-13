@@ -5,6 +5,7 @@
 *Description: Implementation de classe Echiquier
 *********************************************/
 #include "Echiquier.h"
+#include "constantes.h"
 #include <string>
 using namespace std; 
 /*********************************************
@@ -13,7 +14,7 @@ using namespace std;
 *Parametre:		Aucun
 *Retour:		Aucun
 *********************************************/
-Echiquier::Echiquier(): {
+Echiquier::Echiquier() {
 	Pion* tableauPions_ = new Pion[SEIZE];
 	Tour* tableauTours_ = new Tour[QUATRE];
 	compteurPion_ = ZERO; 
@@ -83,19 +84,74 @@ void Echiquier::deplacerPiece(const string id, int toX, int toY) {
 
 }
 
-////La méthode publique void deplacerPiece(string id, int toX, int toY) qui déplace la pièce 
-////d'identifiant id  à la position de coordonnées (toX,toY). ? 
+////La mï¿½thode publique void deplacerPiece(string id, int toX, int toY) qui dï¿½place la piï¿½ce 
+////d'identifiant id  ï¿½ la position de coordonnï¿½es (toX,toY). ? 
 ////
 ////
 ////
 ////
-////La méthode publiquevoid enleverTour(const string id) qui permet d’enlever la tour d'identifiant 
+////La mï¿½thode publiquevoid enleverTour(const string id) qui permet dï¿½enlever la tour d'identifiant 
 ////id de tableauTours_  ? 
 ////
 ////
 ////
 ////
 ////
-////La méthode publique void enleverPion(const string id)
-////qui permet d’enlever le pion d'identifiant id de tableauPions_ 
+////La mï¿½thode publique void enleverPion(const string id)
+////qui permet dï¿½enlever le pion d'identifiant id de tableauPions_ 
 
+/*********************************************
+*Fonctions:		Echiquier::EnleverTour
+*Descriptions:	Enleve une tour	par reference dans un tableau ayant
+*				une capacite pour quatre tours.
+*Parametre:		-(string)id	: l'ID de la tour
+*Retour:		Aucun
+*********************************************/
+void Echiquier::enleverTour(const string/*&*/ id) {
+	int index = 0;
+	bool estPresent = false;
+	for (unsigned i = 0; i < compteurTour_; i++) {
+		if (id == tableauTours_[i].obtenirId()) {
+			index = i;
+			estPresent = true;
+		}
+	}
+	if (estPresent)
+	{
+		for (unsigned int i = index; i < compteurTour_ - 1; i++) {
+			tableauTours_[i] = tableauTours_[i + 1];
+		}
+		compteurTour_--;
+	}
+	else {
+		cout << "L'id que vous avez entre est invalide." << endl;
+	}
+}
+
+/*********************************************
+*Fonctions:		Echiquier::EnleverPion
+*Descriptions:	Enleve une tour	par reference dans un tableau ayant
+*				une capacite pour seize Pions.
+*Parametre:		-(string)id	: l'ID de la pion
+*Retour:		Aucun
+*********************************************/
+void Echiquier::enleverPion(const string/*&*/ id) {
+	int index = 0;
+	bool estPresent = false;
+	for (unsigned i = 0; i < compteurPion_; i++) {
+		if (id == tableauPions_[i].obtenirId()) {
+			index = i;
+			estPresent = true;
+		}
+	}
+	if (estPresent)
+	{
+		for (unsigned int i = index; i < compteurPion_ - 1; i++) {
+			tableauPions_[i] = tableauPions_[i + 1];
+		}
+		compteurPion_--;
+	}
+	else {
+		cout << "L'id que vous avez entre est invalide." << endl;
+	}
+}

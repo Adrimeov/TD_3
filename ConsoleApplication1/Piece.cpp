@@ -5,6 +5,7 @@
 *******************************************/
 
 #include "Piece.h"
+#include "constantes.h"
 
 const int SEPT = 7; //taille de case en x ou y
 const int ZERO = 0; //minimum

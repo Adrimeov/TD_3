@@ -9,9 +9,6 @@
 
 using namespace std;
 
-const int SEPT = 7; //taille de case en x ou y
-const int ZERO = 0; //minimum
-
 /*********************************************
 *Fonctions:     Roi()
 *Descriptions:  Constructeur par default de

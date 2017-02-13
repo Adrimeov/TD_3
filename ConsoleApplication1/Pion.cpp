@@ -5,9 +5,8 @@
 *******************************************/
 
 #include "Pion.h"
+#include "constantes.h"
 
-const int SEPT = 7; //taille de case en x ou y
-const int ZERO = 0; //minimum
 
 using namespace std;
 
@@ -62,18 +61,18 @@ bool Pion::estMouvementValide(int toX, int toY) const {
     if (estMouvementValide(toX, toY) && toX == obtenirPositionX()) {
         if (estPositionInit_) {
             if (couleur) {
-                estValide = (diffPosition <= 2 && diffPosition >= 0);
+                estValide = (diffPosition <= DEUX && diffPosition >= 0);
             }
             else {
-                estValide = (diffPosition >= -2 && diffPosition <= 0);
+                estValide = (diffPosition >= -DEUX && diffPosition <= 0);
             }
          }
          else {
              if (couleur) {
-                estValide = (diffPosition <= 1 && diffPosition >= 0);
+                estValide = (diffPosition <= UN && diffPosition >= 0);
             }
             else {
-                estValide = (diffPosition >= -1 && diffPosition <= 0);
+                estValide = (diffPosition >= -UN && diffPosition <= 0);
             }
          }
     }
