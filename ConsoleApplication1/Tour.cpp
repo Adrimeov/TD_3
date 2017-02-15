@@ -51,8 +51,7 @@ bool Tour::estMouvementValide(int toX, int toY) const {
 		estValide = true;
 	else if (PositionInitialeY != toY && Piece::estMouvementValide(toX, toY) && PositionInitialeX == toX)
 		estValide = true;
-
-	if (!estValide)
+	else if (!estValide)
 		cout << "Deplacement de la tour non autorise" << endl;
 
 	return estValide;
