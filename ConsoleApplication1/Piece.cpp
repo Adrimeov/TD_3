@@ -144,6 +144,9 @@ bool Piece::estMouvementValide(int toX, int toY) const {
 			estValide = true;
 	}
 
+    if (!estValide)
+        cout << "Deplacement de piece non autorise." << endl;
+
 	return estValide;
 }
 

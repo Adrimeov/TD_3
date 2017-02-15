@@ -76,6 +76,10 @@ bool Pion::estMouvementValide(int toX, int toY) const {
             }
          }
     }
+
+    if(!estValide)
+        cout << "Deplacement du pion non autorise." << endl;
+
     return estValide;
 }
 

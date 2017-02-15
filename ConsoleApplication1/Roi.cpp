@@ -64,6 +64,10 @@ bool Roi::estMouvementValide(int toX, int toY) const {
         if(estValideX && estValideY)
             estValide = true;
     }
+
+    if (!estValide)
+        cout << "Deplacement du roi non autorise." << endl;
+
     return estValide;
 }
 
