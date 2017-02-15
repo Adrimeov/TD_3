@@ -39,22 +39,22 @@ int main()
 
 	//6-  Creez les huit pions noirs avec les coordonn�es (i,6) i : 0-->7 et les id A7-->H7
 	
-	Pion pN1("A7", "blanc", 0, 6);
-	Pion pN2("B7", "blanc", 1, 6);
-	Pion pN3("C7", "blanc", 2, 6);
-	Pion pN4("D7", "blanc", 3, 6);
-	Pion pN5("E7", "blanc", 4, 6);
-	Pion pN6("F7", "blanc", 5, 6);
-	Pion pN7("G7", "blanc", 6, 6);
-	Pion pN8("H7", "blanc", 7, 6);
+	Pion pN1("A7", "noir", 0, 6);
+	Pion pN2("B7", "noir", 1, 6);
+	Pion pN3("C7", "noir", 2, 6);
+	Pion pN4("D7", "noir", 3, 6);
+	Pion pN5("E7", "noir", 4, 6);
+	Pion pN6("F7", "noir", 5, 6);
+	Pion pN7("G7", "noir", 6, 6);
+	Pion pN8("H7", "noir", 7, 6);
 
 	//7-  Creez les deux tours blanches d'id "A1" et "H1" dans les positions respectives (0,0) et (7,0)
 	Tour tB1("A1", "blanc", 0, 0);
 	Tour tB2("H1", "blanc", 7, 0);
 
 	//8-  Creez les deux tours noires  d'id "A8" et "H8" dans les positions respectives (0,7) et (7,7)
-	Tour tN1("A8", "blanc", 0, 7);
-	Tour tN2("H8", "blanc", 7, 7);
+	Tour tN1("A8", "noir", 0, 7);
+	Tour tN2("H8", "noir", 7, 7);
 
 	//9-  Creez un Echiquier
 	Echiquier echiquier;
